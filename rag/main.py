@@ -1,5 +1,4 @@
 import json
-import os
 from pathlib import Path
 from typing import List, Tuple, Any, Literal
 
@@ -38,7 +37,7 @@ def embedding_text(texts: List[str]) -> List[Tuple[str, List[float]]]:
 # 向量数据库
 import chromadb
 
-client = chromadb.PersistentClient(path="./my_chromadb_data")
+client = chromadb.PersistentClient(path="my_chromadb_data")
 collection = client.get_or_create_collection(name="my_collection")
 
 def add_vector_to_db(
